@@ -1,0 +1,11 @@
+{
+  "name": "WHITE ROOM SYSTEM",
+  "short_name": "WHITE ROOM",
+  "description": "Human Performance System",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#080b12",
+  "theme_color": "#080b12"
+}
