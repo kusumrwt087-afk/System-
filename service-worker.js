@@ -4,10 +4,11 @@ const CACHE_NAME = "white-room-v1";
 const FILES = [
   "./",
   "./index.html",
-  "./manifest.json"
+  "./manifest.json",
+  "./icons/icon-192.svg",
+  "./icons/icon-512.svg"
 ];
 
-// Install: important files cache karo
 self.addEventListener("install", event => {
   event.waitUntil(
     caches.open(CACHE_NAME).then(cache => {
@@ -18,7 +19,6 @@ self.addEventListener("install", event => {
   self.skipWaiting();
 });
 
-// Activate: old cache clean karo
 self.addEventListener("activate", event => {
   event.waitUntil(
     caches.keys().then(keys => {
@@ -33,13 +33,24 @@ self.addEventListener("activate", event => {
   self.clients.claim();
 });
 
-// Fetch: cached files offline serve karo
 self.addEventListener("fetch", event => {
   if (event.request.method !== "GET") return;
 
   event.respondWith(
-    caches.match(event.request).then(cached => {
-      return cached || fetch(event.request);
-    })
+    fetch(event.request)
+      .then(response => {
+        if (response.ok) {
+          const copy = response.clone();
+
+          caches.open(CACHE_NAME).then(cache => {
+            cache.put(event.request, copy);
+          });
+        }
+
+        return response;
+      })
+      .catch(() => {
+        return caches.match(event.request);
+      })
   );
 });
