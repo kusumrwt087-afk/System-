@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,78 +7,182 @@
   <meta name="theme-color" content="#080b12">
   <meta name="description" content="WHITE ROOM Human Performance System">
   <link rel="manifest" href="./manifest.json">
+  <link rel="icon" href="./icons/icon-192.svg" type="image/svg+xml">
   <title>WHITE ROOM SYSTEM</title>
+
   <style>
     * { box-sizing: border-box; }
-    body { margin: 0; padding: 20px; background: #080b12; color: #eaf4ff; font-family: Arial, sans-serif; }
-    header { padding: 24px 0; border-bottom: 1px solid #26364b; }
-    .tag { color: #00e5ff; letter-spacing: 4px; font-size: 11px; }
-    h1 { font-size: 27px; margin-bottom: 8px; }
-    .status { color: #7d91a8; font-size: 13px; }
-    h2 { font-size: 17px; margin-top: 28px; }
-    .card { background: #111a28; border: 1px solid #26364b; border-radius: 13px; padding: 18px; margin: 12px 0; }
-    .card h3 { margin: 0 0 8px; color: #00e5ff; }
-    .card p { color: #9eafc3; font-size: 13px; }
-    button { background: #102b3b; border: 1px solid #00bcd4; color: #eafaff; border-radius: 8px; padding: 11px 15px; font-size: 13px; }
-    #count { color: #00e5ff; font-size: 25px; }
-    footer { margin-top: 35px; color: #63778e; text-align: center; font-size: 11px; }
+
+    body {
+      margin: 0;
+      background: #080b12;
+      color: #eaf4ff;
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    header {
+      padding: 25px 0;
+      border-bottom: 1px solid #26364b;
+    }
+
+    .tag {
+      color: #00e5ff;
+      letter-spacing: 4px;
+      font-size: 11px;
+    }
+
+    h1 { font-size: 29px; margin: 12px 0; }
+
+    .status {
+      color: #8de2bc;
+      font-size: 12px;
+    }
+
+    h2 {
+      font-size: 16px;
+      margin-top: 28px;
+      letter-spacing: 1px;
+    }
+
+    .card {
+      background: #111a28;
+      border: 1px solid #26364b;
+      border-radius: 13px;
+      padding: 18px;
+      margin: 12px 0;
+    }
+
+    .card h3 {
+      color: #00e5ff;
+      margin-top: 0;
+    }
+
+    .card p {
+      color: #9eafc3;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    button {
+      background: #102b3b;
+      color: white;
+      border: 1px solid #00bcd4;
+      border-radius: 8px;
+      padding: 12px 16px;
+      cursor: pointer;
+    }
+
+    button:active { background: #16445a; }
+
+    #count {
+      font-size: 30px;
+      color: #00e5ff;
+      margin: 12px 0;
+    }
+
+    footer {
+      margin-top: 40px;
+      color: #63778e;
+      text-align: center;
+      font-size: 11px;
+    }
   </style>
 </head>
+
 <body>
+
   <header>
     <div class="tag">HUMAN PERFORMANCE PROJECT</div>
     <h1>WHITE ROOM</h1>
-    <div class="status">SYSTEM INITIALIZED · FOUNDATION PHASE</div>
+    <div class="status">● SYSTEM ONLINE</div>
+    <p class="status">FOUNDATION VERSION 1.0</p>
   </header>
 
   <h2>COMMAND CENTER</h2>
+
   <div class="card">
-    <p>SYSTEM STATUS</p>
-    <h3>ONLINE</h3>
-    <p>Your development journey starts here.</p>
+    <h3>WELCOME BACK</h3>
+    <p>Your development system is ready.</p>
+    <p>Every skill begins with consistent practice.</p>
   </div>
 
   <h2>TRAINING MODULES</h2>
+
   <div class="card">
     <h3>MIND ASCENSION</h3>
     <p>Memory · Reasoning · Strategy · Concentration</p>
-    <button onclick="alert('Mind module coming soon')">OPEN MODULE</button>
+    <button onclick="openModule('Mind Ascension')">
+      OPEN MODULE
+    </button>
   </div>
+
   <div class="card">
     <h3>ARISE / PHYSICAL</h3>
     <p>Strength · Speed · Endurance · Mobility</p>
-    <button onclick="alert('Fitness module coming soon')">OPEN MODULE</button>
+    <button onclick="openModule('ARISE Physical')">
+      OPEN MODULE
+    </button>
   </div>
+
   <div class="card">
     <h3>ACADEMIC DOMINANCE</h3>
-    <p>Class 10 · NCERT · Revision · Board Tests</p>
-    <button onclick="alert('Academic module coming soon')">OPEN MODULE</button>
+    <p>NCERT · Board Preparation · Revision</p>
+    <button onclick="openModule('Academic Dominance')">
+      OPEN MODULE
+    </button>
   </div>
+
   <div class="card">
-    <h3>DAILY ACTIVITY</h3>
-    <p>Sessions completed</p>
+    <h3>SOCIAL INTELLIGENCE</h3>
+    <p>Observation · Communication · Understanding</p>
+    <button onclick="openModule('Social Intelligence')">
+      OPEN MODULE
+    </button>
+  </div>
+
+  <h2>ACTIVITY TRACKER</h2>
+
+  <div class="card">
+    <p>COMPLETED SESSIONS</p>
     <div id="count">0</div>
     <button onclick="addSession()">COMPLETE TEST SESSION</button>
   </div>
-  <footer>WHITE ROOM SYSTEM · VERSION 0.1</footer>
+
+  <footer>
+    WHITE ROOM SYSTEM · VERSION 1.0
+  </footer>
 
   <script>
-    let sessions = Number(localStorage.getItem("wr_sessions") || 0);
+    let sessions = Number(
+      localStorage.getItem("wr_sessions") || 0
+    );
+
     const count = document.getElementById("count");
-    function updateCount() { count.textContent = sessions; }
+
+    function updateCount() {
+      count.textContent = sessions;
+    }
+
     function addSession() {
       sessions++;
-      localStorage.setItem("wr_sessions", String(sessions));
+      localStorage.setItem("wr_sessions", sessions);
       updateCount();
     }
+
+    function openModule(name) {
+      alert(name + " module will be developed in the next phase.");
+    }
+
     updateCount();
 
     if ("serviceWorker" in navigator) {
       window.addEventListener("load", () => {
         navigator.serviceWorker.register("./service-worker.js")
-          .catch(error => console.log("Offline setup pending:", error));
+          .catch(error => console.error(error));
       });
     }
   </script>
+
 </body>
 </html>
