@@ -2,202 +2,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#080b12">
-  <meta name="description" content="WHITE ROOM Human Performance System">
-
-  <title>WHITE ROOM SYSTEM</title>
-
-  <link rel="manifest" href="./manifest.json">
-  <link rel="icon" href="./icons/icon-192.png" type="image/png">
-  <link rel="apple-touch-icon" href="./icons/icon-192.png">
-
-  <style>
-    * { box-sizing: border-box; }
-
-    body {
-      margin: 0;
-      padding: 20px;
-      background: #080b12;
-      color: #eaf4ff;
-      font-family: Arial, sans-serif;
-    }
-
-    header {
-      padding: 25px 0;
-      border-bottom: 1px solid #26364b;
-    }
-
-    .tag {
-      color: #00e5ff;
-      letter-spacing: 4px;
-      font-size: 11px;
-    }
-
-    h1 {
-      font-size: 29px;
-      letter-spacing: 2px;
-      margin: 12px 0;
-    }
-
-    .status {
-      color: #8de2bc;
-      font-size: 12px;
-    }
-
-    h2 {
-      font-size: 16px;
-      margin-top: 28px;
-      letter-spacing: 1px;
-    }
-
-    .card {
-      background: #111a28;
-      border: 1px solid #26364b;
-      border-radius: 13px;
-      padding: 18px;
-      margin: 12px 0;
-    }
-
-    .card h3 {
-      color: #00e5ff;
-      margin-top: 0;
-    }
-
-    .card p {
-      color: #9eafc3;
-      font-size: 13px;
-      line-height: 1.6;
-    }
-
-    button {
-      background: #102b3b;
-      color: white;
-      border: 1px solid #00bcd4;
-      border-radius: 8px;
-      padding: 12px 16px;
-      cursor: pointer;
-    }
-
-    #count {
-      font-size: 30px;
-      color: #00e5ff;
-      margin: 12px 0;
-    }
-
-    footer {
-      margin-top: 40px;
-      color: #63778e;
-      text-align: center;
-      font-size: 11px;
-    }
-  </style>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#070914"><meta name="description" content="WHITE ROOM SYSTEM"><link rel="manifest" href="./manifest.json"><link rel="icon" href="./icons/icon-192.png"><title>WHITE ROOM SYSTEM</title>
+<style>
+:root{--bg:#070914;--p:#11182d;--c:#55eaff;--v:#a78bfa;--m:#929ab8;--l:#ffffff20}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 10% 5%,#1b2857,transparent 35%),radial-gradient(ellipse at 90% 30%,#321641,transparent 30%),var(--bg);color:#f3f5ff;font:14px "Segoe UI",Arial,sans-serif}body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;background-image:linear-gradient(#789bff0b 1px,transparent 1px),linear-gradient(90deg,#789bff0b 1px,transparent 1px);background-size:40px 40px}.shell{width:min(1100px,92%);margin:auto}.top{display:flex;justify-content:space-between;align-items:center;padding:20px 0;border-bottom:1px solid var(--l)}.brand{font-weight:900;letter-spacing:2px}.sub,.eyebrow{font-size:10px;letter-spacing:2px;color:var(--c);margin-top:5px}.status{font-size:10px;color:var(--c);border:1px solid #55eaff44;padding:9px 12px;border-radius:30px}.hero{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:20px;padding:45px 0 25px}.hero h1{font-size:clamp(38px,7vw,72px);line-height:1;letter-spacing:-2px;margin:18px 0}.hero h1 span{display:block;color:var(--c);text-shadow:0 0 28px #55eaff44}.hero p{color:#aab2cf;line-height:1.9;max-width:470px}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}button{cursor:pointer;padding:12px 15px;border:1px solid var(--l);border-radius:10px;background:#ffffff08;color:white;font-weight:800;font-size:11px}button.primary{background:linear-gradient(100deg,var(--c),#a7c9ff);color:#07101a;border:0}.portal-scene{min-height:300px;display:grid;place-items:center;position:relative;perspective:800px}.portal-scene:before{content:"";position:absolute;width:200px;height:200px;background:#765cff;filter:blur(80px);opacity:.3}.portal{width:210px;height:250px;display:grid;place-items:center;position:relative;animation:float 5s ease-in-out infinite}.ring{position:absolute;width:180px;height:240px;border:2px solid var(--c);border-radius:50%;transform:rotateY(25deg) rotateZ(-8deg);box-shadow:0 0 30px #55eaff66,inset 0 0 20px #55eaff44}.ring.r2{width:210px;height:260px;border-color:var(--v);transform:rotateY(-25deg) rotateZ(8deg)}.core{width:120px;height:170px;border-radius:50%;background:radial-gradient(ellipse at 50% 25%,#b5f9ff,#4d83d7 20%,#343078 50%,#10112b 80%);box-shadow:0 0 45px #7567ff66}.orbit{position:absolute;width:260px;height:70px;border:1px solid #a78bfa77;border-radius:50%;transform:rotateX(65deg)}.portal-label{position:absolute;bottom:0;font-size:9px;letter-spacing:2px;color:var(--c)}.section{padding:28px 0}.heading{display:flex;justify-content:space-between;align-items:end;gap:10px;margin-bottom:18px}.heading h2{margin:8px 0 0;font-size:26px}.muted{font-size:10px;color:var(--m)}.stats,.worlds{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.card,.discipline,.world{border:1px solid var(--l);border-radius:15px;background:linear-gradient(145deg,#18203ad9,#0c1020);padding:19px}.value{font-size:27px;font-weight:900;color:var(--c);margin:12px 0 6px}.purple{color:var(--v)}.pink{color:#fa82dc}.discipline{border-color:#55eaff33;padding:22px}.dtop{display:flex;justify-content:space-between;gap:10px;align-items:center}.dtop h3{margin:0 0 7px}.dtop p{font-size:11px;color:var(--m);line-height:1.6}.progress{height:7px;background:#ffffff12;border-radius:20px;overflow:hidden;margin:18px 0}.fill{height:100%;width:0;background:linear-gradient(90deg,var(--c),var(--v),#fa82dc);transition:.3s}.tasks{display:grid;grid-template-columns:1fr 1fr;gap:9px}.task{display:flex;align-items:center;gap:10px;border:1px solid #ffffff13;border-radius:10px;padding:13px;cursor:pointer;font-size:12px}.task input{accent-color:#55eaff;width:17px;height:17px}.task small{display:block;color:var(--m);margin-top:4px}.world{min-height:200px;display:flex;flex-direction:column;justify-content:end;overflow:hidden;position:relative;isolation:isolate;transition:.3s}.world:hover{transform:translateY(-5px);border-color:var(--c)}.world:before{content:"";position:absolute;inset:0;z-index:-2;background:radial-gradient(circle at 70% 20%,#fa82dc88,transparent 30%),linear-gradient(145deg,#29376e,#101426)}.world:nth-child(2):before{background:radial-gradient(circle at 50% 25%,#55eaff66,transparent 30%),linear-gradient(145deg,#235e85,#101426)}.world:nth-child(3):before{background:radial-gradient(circle at 70% 20%,#fff4be88,transparent 25%),linear-gradient(145deg,#53618d,#101426)}.world:after{content:"";position:absolute;inset:40% 0 0;z-index:-1;background:linear-gradient(transparent,#080a17)}.tag{font-size:9px;color:var(--c);letter-spacing:2px}.world h3{font-size:20px;margin:10px 0}.world p{font-size:11px;color:#c1c7de;line-height:1.7;margin:0}.protocols{display:grid;grid-template-columns:repeat(5,1fr);gap:9px}.step{text-align:center;padding:17px 4px;border:1px solid var(--l);border-radius:12px;background:var(--p)}.step b{display:block;color:var(--c);font-size:18px;margin-bottom:8px}.step span{font-size:9px;font-weight:800}.footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;border-top:1px solid var(--l);padding:25px 0 30px;color:var(--m);font-size:10px}.toast{position:fixed;bottom:20px;left:50%;transform:translate(-50%,20px);background:#0d192b;border:1px solid var(--c);border-radius:10px;padding:12px;color:var(--c);opacity:0;transition:.2s;pointer-events:none}.toast.show{opacity:1;transform:translate(-50%,0)}@keyframes float{50%{transform:translateY(-12px) rotateY(-8deg)}}@media(max-width:700px){.hero{grid-template-columns:1fr;padding-top:30px}.portal-scene{min-height:250px;grid-row:1}.stats{gap:8px}.card{padding:12px}.value{font-size:22px}.worlds{grid-template-columns:1fr}.world{min-height:170px}.protocols{grid-template-columns:repeat(3,1fr)}.tasks{grid-template-columns:1fr}.heading h2{font-size:22px}}
+</style>
 </head>
-
-<body>
-
-  <header>
-    <div class="tag">HUMAN PERFORMANCE PROJECT</div>
-    <h1>WHITE ROOM</h1>
-    <div class="status">● SYSTEM ONLINE</div>
-    <p class="status">FOUNDATION VERSION 1.1</p>
-  </header>
-
-  <h2>COMMAND CENTER</h2>
-
-  <div class="card">
-    <h3>WELCOME BACK</h3>
-    <p>Your development system is ready.</p>
-    <p>Observe · Think · Execute · Adapt</p>
-  </div>
-
-  <h2>TRAINING MODULES</h2>
-
-  <div class="card">
-    <h3>MIND ASCENSION</h3>
-    <p>Memory · Reasoning · Strategy · Concentration</p>
-    <button onclick="openModule('Mind Ascension')">
-      OPEN MODULE
-    </button>
-  </div>
-
-  <div class="card">
-    <h3>ARISE / PHYSICAL</h3>
-    <p>Strength · Speed · Endurance · Mobility</p>
-    <button onclick="openModule('ARISE Physical')">
-      OPEN MODULE
-    </button>
-  </div>
-
-  <div class="card">
-    <h3>ACADEMIC DOMINANCE</h3>
-    <p>NCERT · Board Preparation · Revision</p>
-    <button onclick="openModule('Academic Dominance')">
-      OPEN MODULE
-    </button>
-  </div>
-
-  <div class="card">
-    <h3>SOCIAL INTELLIGENCE</h3>
-    <p>Observation · Communication · Understanding</p>
-    <button onclick="openModule('Social Intelligence')">
-      OPEN MODULE
-    </button>
-  </div>
-
-  <h2>ACTIVITY TRACKER</h2>
-
-  <div class="card">
-    <p>COMPLETED SESSIONS</p>
-    <div id="count">0</div>
-    <button onclick="addSession()">
-      COMPLETE TEST SESSION
-    </button>
-  </div>
-
-  <footer>
-    WHITE ROOM SYSTEM · VERSION 1.1
-  </footer>
-
-  <script>
-    const STORAGE_KEY = "wr_sessions";
-
-    let sessions = Number(
-      localStorage.getItem(STORAGE_KEY) || 0
-    );
-
-    const count = document.getElementById("count");
-
-    function updateCount() {
-      count.textContent = sessions;
-    }
-
-    function addSession() {
-      sessions++;
-      localStorage.setItem(STORAGE_KEY, String(sessions));
-      updateCount();
-    }
-
-    function openModule(name) {
-      alert(name + " module is under development.");
-    }
-
-    updateCount();
-
-    if ("serviceWorker" in navigator) {
-      window.addEventListener("load", async () => {
-        try {
-          await navigator.serviceWorker.register(
-            "./service-worker.js"
-          );
-          console.log("WHITE ROOM service worker registered.");
-        } catch (error) {
-          console.error("Service worker error:", error);
-        }
-      });
-    }
-  </script>
-
-</body>
-</html>
+<body><div class="shell">
+<header class="top"><div class="brand">WHITE ROOM<div class="sub">HUMAN EVOLUTION SYSTEM</div></div><div class="status">● SYSTEM ONLINE</div></header>
+<main>
+<section class="hero" id="home"><div><div class="eyebrow">PERSONAL EVOLUTION PROTOCOL // 001</div><h1>FORGE YOUR <span>OWN LIMITS.</span></h1><p>Build discipline, sharpen intelligence and evolve through consistent action. Your next level begins with what you do today.</p><div class="actions"><button class="primary" id="start">INITIALIZE PROTOCOL ↗</button><button id="focus">◉ FOCUS MODE</button></div></div><div class="portal-scene"><div class="orbit"></div><div class="portal"><div class="ring r2"></div><div class="ring"></div><div class="core"></div></div><div class="portal-label">EVOLUTION GATE // ACTIVE</div></div></section>
+<section class="section" id="stats"><div class="heading"><div><div class="eyebrow">LIVE TELEMETRY</div><h2>System Overview</h2></div><div class="muted">PERSONAL DASHBOARD</div></div><div class="stats"><div class="card"><div class="muted">DISCIPLINE PROGRESS</div><div class="value" id="percent">0%</div><div class="muted">Today's checklist completion</div></div><div class="card"><div class="muted">PROTOCOL STATUS</div><div class="value purple" id="status">READY</div><div class="muted" id="statusText">Awaiting first action</div></div><div class="card"><div class="muted">COMPLETED ACTIONS</div><div class="value pink" id="count">0 / 5</div><div class="muted">Saved on this device</div></div></div></section>
+<section class="section" id="discipline"><div class="heading"><div><div class="eyebrow">DAILY EXECUTION</div><h2>Discipline Protocol</h2></div><div class="muted">DAY 01 // FOUNDATION</div></div><div class="discipline"><div class="dtop"><div><h3>Today's Core Objectives</h3><p>Consistency over perfection. One action at a time.</p></div><div class="value" id="num">0%</div></div><div class="progress"><div class="fill" id="fill"></div></div><div class="tasks" id="tasks"><label class="task"><input type="checkbox" data-i="0"><span>Deep Work<small>One focused session</small></span></label><label class="task"><input type="checkbox" data-i="1"><span>Learn Something<small>Understand, then recall</small></span></label><label class="task"><input type="checkbox" data-i="2"><span>Physical Movement<small>Safe planned activity</small></span></label><label class="task"><input type="checkbox" data-i="3"><span>Observe & Reflect<small>Review decisions calmly</small></span></label><label class="task"><input type="checkbox" data-i="4"><span>Prepare for Tomorrow<small>Choose the next priority</small></span></label></div><div class="actions"><button id="reset">RESET TODAY</button><button class="primary" id="check">CHECK STATUS ✓</button></div></div></section>
+<section class="section"><div class="heading"><div><div class="eyebrow">CINEMATIC WORLDS</div><h2>Worlds That Inspire</h2></div><div class="muted">THREE ATMOSPHERES</div></div><div class="worlds"><article class="world"><div class="tag">01 // COSMIC DESTINY</div><h3>Your Name</h3><p>A sky full of possibilities. Keep moving toward the person you want to become.</p></article><article class="world"><div class="tag">02 // OPEN THE GATE</div><h3>Suzume</h3><p>Every new door begins with courage, responsibility and a first step.</p></article><article class="world"><div class="tag">03 // BEYOND THE CLOUDS</div><h3>Weathering with You</h3><p>Find clarity in the storm. Stay grounded when the world feels uncertain.</p></article></div></section>
+<section class="section"><div class="heading"><div><div class="eyebrow">MENTAL FRAMEWORK</div><h2>Execution Sequence</h2></div></div><div class="protocols"><div class="step"><b>01</b><span>OBSERVE</span></div><div class="step"><b>02</b><span>THINK</span></div><div class="step"><b>03</b><span>DECIDE</span></div><div class="step"><b>04</b><span>EXECUTE</span></div><div class="step"><b>05</b><span>ADAPT</span></div></div></section>
+</main><footer class="footer"><span>WHITE ROOM // EVOLUTION PROTOCOL</span><span>DISCIPLINE · INTELLIGENCE · CONSISTENCY</span></footer></div><div class="toast" id="toast"></div>
+<script>
+(()=>{const key="white-room-daily-v1",tasks=[...document.querySelectorAll("[data-i]")],$=id=>document.getElementById(id);let timer;function day(){const d=new Date();return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0")}function toast(s){$("toast").textContent=s;$("toast").classList.add("show");clearTimeout(timer);timer=setTimeout(()=>$("toast").classList.remove("show"),2200)}function save(){try{localStorage.setItem(key,JSON.stringify({date:day(),tasks:tasks.map(t=>t.checked)}))}catch(e){}}function render(){const n=tasks.filter(t=>t.checked).length,p=Math.round(n/tasks.length*100);$("percent").textContent=p+"%";$("num").textContent=p+"%";$("fill").style.width=p+"%";$("count").textContent=n+" / "+tasks.length;$("status").textContent=n===5?"COMPLETE":n?"ACTIVE":"READY";$("statusText").textContent=n===5?"All objectives checked":n?"Progress underway":"Awaiting first action";tasks.forEach(t=>t.closest(".task").style.opacity=t.checked?".65":"1")}try{const s=JSON.parse(localStorage.getItem(key));if(s?.date===day()&&Array.isArray(s.tasks))tasks.forEach((t,i)=>t.checked=s.tasks[i]===true)}catch(e){}tasks.forEach(t=>t.addEventListener("change",()=>{save();render()}));$("start").onclick=()=>{$("discipline").scrollIntoView({behavior:"smooth"});toast("Protocol initialized.")};$("focus").onclick=()=>{const active=document.body.classList.toggle("focus");["stats"].forEach(id=>$(id).style.display=active?"none":"");document.querySelectorAll(".hero~.section:not(#discipline),.footer").forEach(el=>el.style.display=active?"none":"");$("focus").textContent=active?"EXIT FOCUS MODE":"◉ FOCUS MODE";toast(active?"Focus mode enabled":"Focus mode disabled")};$("reset").onclick=()=>{tasks.forEach(t=>t.checked=false);save();render();toast("Checklist reset.")};$("check").onclick=()=>{const n=tasks.filter(t=>t.checked).length;toast(n===5?"All five objectives completed!":n+" of 5 objectives completed.")};render();if("serviceWorker"in navigator)addEventListener("load",()=>navigator.serviceWorker.register("./service-worker.js").catch(console.error))})();
+</script>
+</body></html>
